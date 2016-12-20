@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
        KC_NO,   KC_BTN4, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO,
-       KC_NO,   KC_NO,   KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
                 KC_NO,   KC_NO,   KC_MS_D, KC_MS_U,
         // left thumb
                                            KC_NO,   KC_NO,
@@ -44,14 +44,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // right hand
        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_POWER,
-       KC_NO,   KC_VOLU, KC_MS_U, KC_VOLD, KC_NO,   KC_NO,
-       KC_NO,   KC_MS_L, KC_MS_D, KC_MS_R, KC_NO,   KC_NO,
+       KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,
+       KC_NO,   KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,   KC_NO,
        KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO,
                 KC_MS_L, KC_MS_R, KC_NO,   KC_NO,
        // right thumb
        KC_NO, KC_NO,
        KC_NO,
        KC_TRNS, KC_ENT, KC_NO
+)
+
+// this will eventually be a symbol layer with parenthesis and numbers
+[_SYMBOL] = KEYMAP(
+       // left hand
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                KC_NO,   KC_NO,   KC_NO,   KC_NO,
+        // left thumb
+                                           KC_NO,   KC_NO,
+                                                    KC_NO,
+                                  KC_NO,   KC_NO,   KC_TRNS,
+       // right hand
+       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,   KC_7,    KC_8,    KC_9,   KC_NO,   KC_NO,
+       KC_NO,   KC_4,    KC_5,    KC_6,   KC_NO,   KC_NO,
+       KC_NO,   KC_1,    KC_2,    KC_3,   KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_0 ,   KC_NO,   KC_NO,   KC_NO,
+                KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       // right thumb
+       KC_NO, KC_NO,
+       KC_NO,
+       KC_TRNS, KC_NO, KC_NO
 )
 };
 

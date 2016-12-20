@@ -2,6 +2,7 @@
 
 #define _DVORAK 0 // Base Dvorak layer
 #define _MEDIA 1  // Media layer
+#define _SYMBOL 2 // Numpad and Symbol layer
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_DVORAK] = KEYMAP(
@@ -15,7 +16,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left thumb
                             KC_LGUI, KC_LCTL,
                                      KC_LALT,
-                   KC_BSPC, KC_DEL,  TG(_MEDIA),
+                   /* KC_BSPC, KC_DEL,  TG(_MEDIA), */
+                   KC_BSPC, TO(_SYMBOL),  TO(_MEDIA),
         // right hand
         KC_F9,  KC_F10,   KC_F11,   KC_F12,   KC_PSCR, KC_SLCK, KC_PAUS, KC_FN0, KC_1,
         KC_6,   KC_7,     KC_8,     KC_9,     KC_0,    KC_EQL,
@@ -26,7 +28,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right thumb
         KC_RCTL,    KC_RGUI,
         KC_RALT,
-        TG(_MEDIA), KC_ENT, KC_SPC
+        /* TG(_MEDIA), KC_ENT, KC_SPC */
+        TO(_MEDIA), KC_ENT, KC_SPC
     ),
 
 [_MEDIA] = KEYMAP(
@@ -40,7 +43,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left thumb
                                            KC_NO,   KC_NO,
                                                     KC_NO,
-                                  KC_NO,   KC_NO,   KC_TRNS,
+                                  /* KC_NO,   KC_NO,   KC_TRNS, */
+                                  KC_NO,   TO(_DVORAK),   TO(_SYMBOL),
        // right hand
        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_POWER,
@@ -51,33 +55,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // right thumb
        KC_NO, KC_NO,
        KC_NO,
-       KC_TRNS, KC_ENT, KC_NO
-)
+       /* KC_TRNS, KC_ENT, KC_NO */
+       TO(_SYMBOL), KC_ENT, KC_NO
+),
 
 // this will eventually be a symbol layer with parenthesis and numbers
 [_SYMBOL] = KEYMAP(
        // left hand
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_LPRN, KC_RPRN, KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_LCBR, KC_RCBR, KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_LBRC, KC_RBRC, KC_NO,
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
                 KC_NO,   KC_NO,   KC_NO,   KC_NO,
         // left thumb
                                            KC_NO,   KC_NO,
                                                     KC_NO,
-                                  KC_NO,   KC_NO,   KC_TRNS,
+                                  KC_NO,   TO(_MEDIA),   TO(_DVORAK),
        // right hand
        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
        KC_NO,   KC_7,    KC_8,    KC_9,   KC_NO,   KC_NO,
        KC_NO,   KC_4,    KC_5,    KC_6,   KC_NO,   KC_NO,
-       KC_NO,   KC_1,    KC_2,    KC_3,   KC_NO,   KC_NO,
-       KC_NO,   KC_NO,   KC_0 ,   KC_NO,   KC_NO,   KC_NO,
-                KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_NO,   KC_1,    KC_2,    KC_3,    KC_NO,   KC_NO,
+                KC_NO,   KC_0,   KC_NO,   KC_NO,
        // right thumb
        KC_NO, KC_NO,
        KC_NO,
-       KC_TRNS, KC_NO, KC_NO
+       TO(_DVORAK), KC_NO, KC_NO
 )
 };
 

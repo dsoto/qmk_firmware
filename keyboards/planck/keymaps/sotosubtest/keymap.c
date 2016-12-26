@@ -92,22 +92,22 @@ NAV layer
 */
 
 [_QWERTY] = {
-  {KC_QUOT       , KC_COMM, KC_DOT , KC_P , KC_Y          , KC_TAB       , KC_SLSH      , KC_F         , KC_G   , KC_C   , KC_R   , KC_L         },
-  {KC_A          , KC_O   , KC_E   , KC_U , KC_I          , KC_GRV       , KC_MINS      , KC_D         , KC_H   , KC_T   , KC_N   , KC_S         },
-  {SFT_T(KC_SCLN), KC_Q   , KC_J   , KC_K , KC_X          , ALT_T(KC_EQL), KC_RALT      , KC_B         , KC_M   , KC_W   , KC_V   , SFT_T(KC_Z)  },
-  {MO(_SYMBOL)   , KC_LBRC, KC_DOWN, KC_UP, GUI_T(KC_BSPC), CTL_T(KC_ESC)       , CTL_T(KC_ENT), GUI_T(KC_SPC), KC_LEFT, KC_RGHT, KC_RBRC, LT(_SYMBOL, KC_BSLS)}
+  {KC_QUOT        , KC_COMM , KC_DOT  , KC_P  , KC_Y           , KC_TAB        , KC_SLSH       , KC_F          , KC_G    , KC_C    , KC_R    , KC_L         } ,
+  {KC_A           , KC_O    , KC_E    , KC_U  , KC_I           , TD(TD_LS)     , KC_MINS       , KC_D          , KC_H    , KC_T    , KC_N    , KC_S         } ,
+  {SFT_T(KC_SCLN) , KC_Q    , KC_J    , KC_K  , KC_X           , ALT_T(KC_GRV) , ALT_T(KC_EQL) , KC_B          , KC_M    , KC_W    , KC_V    , SFT_T(KC_Z)  } ,
+  {MO(_SYMBOL)    , KC_LBRC , KC_DOWN , KC_UP , GUI_T(KC_BSPC) , CTL_T(KC_ESC) , CTL_T(KC_ENT) , GUI_T(KC_SPC) , KC_LEFT , KC_RGHT , KC_RBRC , LT(_SYMBOL     , KC_BSLS)}
  } ,
 [_SYMBOL] = {
-  {KC_1           , KC_2    , KC_3    , KC_4    , KC_5           , KC_GRV    , KC_NO         , KC_6          , KC_7    , KC_8    , KC_9    , KC_0         } ,
-  {KC_NO          , KC_NO   , KC_LBRC , KC_RBRC , KC_NO          , KC_NO     , KC_NO         , KC_NO         , KC_NO   , KC_NO   , KC_NO   , KC_NO        } ,
+  {KC_1           , KC_2    , KC_3    , KC_4    , KC_5           , KC_GRV    , KC_EQL        , KC_6          , KC_7    , KC_8    , KC_9    , KC_0         } ,
+  {KC_NO          , KC_NO   , KC_LBRC , KC_RBRC , KC_NO          , _______   , KC_NO         , KC_NO         , KC_NO   , KC_NO   , KC_NO   , KC_NO        } ,
   {KC_LSFT        , KC_NO   , KC_NO   , KC_NO   , KC_BSLS        , _______   , _______       , KC_NO         , KC_NO   , KC_NO   , KC_NO   , KC_RSFT      } ,
   {_______        , KC_NO   , _______ , _______ , _______        , _______   , _______       , _______       , _______ , _______ , KC_NO   , KC_NO        } ,
  } ,
 [_NAV] = {
-  {KC_NO        , KC_NO   , KC_NO   , KC_NO   , KC_NO          , KC_NO     , KC_NO         , KC_NO         , KC_NO   , KC_NO   , KC_NO   , KC_NO          } ,
-  {KC_NO        , KC_NO   , KC_NO   , KC_NO   , KC_NO          , KC_NO     , KC_NO         , KC_NO         , KC_NO   , KC_NO   , KC_NO   , KC_NO          } ,
-  {KC_LSFT      , KC_NO   , KC_NO   , KC_MS_D , KC_MS_U        , _______   , _______       , KC_NO         , KC_NO   , KC_NO   , KC_NO   , KC_RSFT        } ,
-  {KC_NO        , KC_NO   , _______ , _______ , _______        , _______   , _______       , _______       , _______ , _______ , KC_NO   , KC_NO          } ,
+  {KC_NO   , KC_NO , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_POWER          } ,
+  {KC_NO   , KC_NO , KC_NO   , KC_NO   , KC_NO   , _______ , _______ , KC_NO   , KC_MPRV , KC_MPLY , KC_MNXT , KC_NO          }    ,
+  {KC_NO   , KC_NO , KC_BTN2 , KC_BTN1 , KC_NO   , _______ , _______ , KC_NO   , KC_VOLU , KC_MUTE , KC_VOLD , KC_NO        }    ,
+  {KC_NO   , KC_NO , KC_MS_D , KC_MS_U , _______ , _______ , _______ , _______ , KC_MS_L , KC_MS_R , KC_NO   , KC_NO          }    ,
  }
 };
 

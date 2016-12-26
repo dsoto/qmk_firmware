@@ -17,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_LGUI, KC_LCTL,
                                      KC_LALT,
                    /* KC_BSPC, KC_DEL,  TG(_MEDIA), */
-                   KC_BSPC, TO(_SYMBOL),  TO(_MEDIA),
+                   KC_BSPC, KC_ESC,  TO(_MEDIA),
         // right hand
         KC_F9,  KC_F10,   KC_F11,   KC_F12,   KC_PSCR, KC_SLCK, KC_PAUS, KC_FN0, KC_1,
         KC_6,   KC_7,     KC_8,     KC_9,     KC_0,    KC_EQL,

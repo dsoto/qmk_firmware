@@ -14,7 +14,7 @@ extern keymap_config_t keymap_config;
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
-#define _QWERTY 0
+#define _DVORAK 0
 #define _SYMBOL 1
 #define _NAV 2
 
@@ -27,13 +27,15 @@ enum {
 };
 
 void jump_layer(qk_tap_dance_state_t *state, void *user_data) {
+// allows switching between layers with a single key
+// one press for default
+// two presses for symbol layer
+// three taps for media and mouse layer
   switch (state->count) {
-        /* register_code(KC_LCTL); */
-        /* break; */
       case 1:
       layer_off(_NAV);
       layer_off(_SYMBOL);
-      layer_on(_QWERTY);
+      layer_on(_DVORAK);
       break;
   case 2:
       // jump to symbol
@@ -41,7 +43,6 @@ void jump_layer(qk_tap_dance_state_t *state, void *user_data) {
       layer_on(_SYMBOL);
       break;
   case 3:
-  /* case 4: */
       // jump to nav
       layer_on(_NAV);
       break;
@@ -59,13 +60,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 DVORAK layer
 -------------------------------------------------------------------------------------------------
-|   "   |   ,   |   .   |   P   |   Y   |  TAB  |   /   |   F   |   G   |   C   |   R   |   L   |
+|   "   |   ,   |   .   |   P   |   Y   |  tab  |   /   |   F   |   G   |   C   |   R   |   L   |
 -------------------------------------------------------------------------------------------------
-|   A   |   O   |   E   |   U   |   I   |   `   |   -   |   D   |   H   |   T   |   N   |   S   |
+|   A   |   O   |   E   |   U   |   I   | layer |   -   |   D   |   H   |   T   |   N   |   S   |
 -------------------------------------------------------------------------------------------------
-|;/shift|   Q   |   J   |   K   |   X   | =/alt |  alt  |   B   |   M   |   W   |   V   |Z/shift|
+|;/shift|   Q   |   J   |   K   |   X   | `/alt |  alt  |   B   |   M   |   W   |   V   |Z/shift|
 -------------------------------------------------------------------------------------------------
-|  ESC  |   [   |  DOWN |   UP  |  BACK | Layer |ENT/GUI| Space |  Left | Right |   ]   |   \   |
+|  sym  |   [   |  down |   up  |  bspc |  esc  |ent/gui| Space |  <--  |  -->  |   ]   | \/sym |
 -------------------------------------------------------------------------------------------------
 
 SYMBOL layer
@@ -91,7 +92,7 @@ NAV layer
 -------------------------------------------------------------------------------------------------
 */
 
-[_QWERTY] = {
+[_DVORAK] = {
   {KC_QUOT        , KC_COMM , KC_DOT  , KC_P  , KC_Y           , KC_TAB        , KC_SLSH       , KC_F          , KC_G    , KC_C    , KC_R    , KC_L         } ,
   {KC_A           , KC_O    , KC_E    , KC_U  , KC_I           , TD(TD_LS)     , KC_MINS       , KC_D          , KC_H    , KC_T    , KC_N    , KC_S         } ,
   {SFT_T(KC_SCLN) , KC_Q    , KC_J    , KC_K  , KC_X           , ALT_T(KC_GRV) , ALT_T(KC_EQL) , KC_B          , KC_M    , KC_W    , KC_V    , SFT_T(KC_Z)  } ,
